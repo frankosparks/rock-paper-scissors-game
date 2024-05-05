@@ -1,3 +1,4 @@
+
 let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
@@ -15,6 +16,23 @@ score = {
   ties: 0
 }
 } */
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay(){
+  if(!isAutoPlaying){
+    intervalId = setInterval(function(){
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    },1000);
+    isAutoPlaying = true;
+  }
+  else{
+    clearInterval(intervalId);
+    isAutoPlaying = false;w
+  }
+}
 
 function playGame(playerMove){
  pickComputerMove();
@@ -75,8 +93,8 @@ localStorage.setItem('score',JSON.stringify(score));
   document.querySelector('.js-result').innerHTML = result;
   
   document.querySelector('.js-moves').innerHTML =`You
-<img src="/Rock Paper Scissors_files/${playerMove}-emoji.png" alt="" class="m-icon">
-<img src="/Rock Paper Scissors_files/${computerMove}-emoji.png" alt="" class="m-icon">
+<img src="/icons/${playerMove}.png" alt="" class="m-icon">
+<img src="/icons/${computerMove}.png" alt="" class="m-icon">
 Computer`
 
   }
