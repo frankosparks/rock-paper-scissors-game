@@ -4,3 +4,6 @@ After this, it is displayed where one has won,lost or has tied with the computer
 Icons the player and the computer has chosen are then displayed.
 The results are recorded and stored in the local storage.
 There is a reset button to reset the score and erase it from local storage and one is able to start over.
+I have added a small functionality for Autoplaying.
+On pressing that button,the game autoplays and results recorded.
+Other functionality still the same.
